@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+}
+
+#main{
+    /* margin: 5rem 0; */
+    background-color: white;
+    max-width: 700px;
+    text-align: justify;
+    padding: 1rem;
+
+}
+
+p{
+    font-size: 22px;
+    margin: 1rem 0;
+}
+
+img{
+    transition: all 0.6s ease;
+    transform: translateX(-150px);
+    margin: 1rem;
+    float: left;
+    opacity: 0;
+}

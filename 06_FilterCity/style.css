@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(133, 60, 182);
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#search{
+    width: 40vw;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    margin: 1rem 0;
+}
+
+.suggestion{
+    width: 40vw;
+}
+
+.suggestion li{
+    display: flex;
+    background: rgb(131, 38, 4);
+    margin-bottom: 0.2rem;
+}
+
+.suggestion li span{
+    width: 8rem;
+    text-align: right;
+    padding: 1rem;
+    color: white;
+}
+
+.suggestion li p{
+    width: 40vw;
+    color: white;
+    padding: 1rem;
+    list-style: none;
+}

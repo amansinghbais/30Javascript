@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <video src="652333414.mp4" id="video"></video>
+        <div class="controller">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div class="control">
+                <div id="play-pause-button"><i class="fas fa-play" id="icon"></i></div>
+                <input type="range" id="volume" min="0" max="100" value="20">
+                <i id="backward" class="fas fa-backward"></i>
+                <i id="forward" class="fas fa-forward"></i>
+                <select id="speed">
+                    <option value="2.0">2X</option>
+                    <option value="1.5">1.5X</option>
+                    <option value="1.0" selected>Normal</option>
+                    <option value="0.5">0.5X</option>
+                    <option value="0.25">0.25X</option>
+                </select>
+                <i class="fas fa-expand" id="toggleScreen"></i> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/01f862cb79.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#panel1{background-image: url('img/architecture-4795667_1920.jpg')}
+#panel2{background-image: url('img/flowers-5479950_1920.jpg');}
+#panel3{background-image: url('img/heidelberg-5360729_1920.jpg');}
+#panel4{background-image: url('img/mountain-climbing-4767088_1920.jpg');}
+#panel5{background-image: url('img/waterfall-5428467_1920.jpg');}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-size: cover; */
+
+    transition: all 0.5s ease;
+}
+
+
+.panel p,.panel h1{
+    font-weight: 300;
+    color: white;
+    /* font-size: 2em; */
+    text-shadow: 0 0 10px black;
+}
+
+.panel h1{
+    font-family: algerian;
+    font-size: 2em;
+    margin: 10rem 0rem;
+}
+
+.open{
+    flex: 5;
+}
+
+.top{
+    transform: translateY(-150px);
+    font-size: 10px;
+    transition: all 0.5s ease;
+}
+.bottom{
+    transform: translateY(150px);
+    font-size: 10px;
+    transition: all 0.5s ease;
+}
+
+.open .bottom,.open .top{
+    transform: translateY(0);
+    font-size: 2em;
+}
+
+.open h1{
+    font-size: 4em;
+}

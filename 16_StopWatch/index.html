@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: limegreen;
+        }
+        .watch{
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+        #display{
+            color: white;
+            margin-bottom: 3rem;
+            font-size: 3rem;
+        }
+        .btn{
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: rgb(133, 37, 20);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.5s ease;
+        }
+        .btn:hover{
+            background-color: brown;
+        }
+
+        .btn:disabled{
+            cursor: not-allowed;
+            /* pointer-events: none; */
+            color: #c0c0c0;
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="watch">
+        <div id="display">00:00:00</div>
+        <div id="controls">
+            <button id="start" class="btn">Start</button>
+            <button id="pause" class="btn" disabled>Pause</button>
+            <button id="reset" class="btn" disabled>Reset</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>    
+</body>
+</html>

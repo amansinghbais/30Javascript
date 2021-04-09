@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Flex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="panel1" class="panel open">
+            <p class="top">HEY</p>
+            <h1>LET'S</h1>
+            <p class="bottom">DANCE</p>
+        </div>
+        <div id="panel2" class="panel">
+            <p class="top">GIVE</p>
+            <h1>TAKE</h1>
+            <p class="bottom">RECEIVE</p>            
+        </div>
+        <div id="panel3" class="panel">
+            <p class="top">EXPERIENCE</p>
+            <h1>IT</h1>
+            <p class="bottom">TODAY</p>
+        </div>
+        <div id="panel4" class="panel">
+            <p class="top">GIVE</p>
+            <h1>ALL</h1>
+            <p class="bottom">YOU</p>
+        </div>
+        <div id="panel5" class="panel">
+            <p class="top">LIFE</p>
+            <h1>IN</h1>
+            <p class="bottom">MOTION</p>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        const panel = document.querySelectorAll('.panel');
+        panel.forEach(p=>{
+            p.addEventListener('click', ()=>{
+                if(p.classList.contains('open')){
+                    p.classList.remove('open');
+                }else{
+                    p.classList.add('open');
+                }
+                console.log(p);
+            });
+        });
+    </script>
+</body>
+</html>

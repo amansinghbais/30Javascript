@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right , cyan,rgb(0, 162, 255));
+    }
+    #box{
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 0 10px black;
+        border-radius: 10px;
+    }
+    #box h1{
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        color: red;
+        text-shadow: 0 0 20px cyan;
+    }
+    #box p{
+        background-color: purple;
+        color: white;
+    }
+    .input{
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        color: inherit;
+        padding: 10px;
+        text-align: center;
+        background: inherit;
+        cursor: pointer;
+    }
+    #btn{
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: rgb(12, 129, 41);
+        padding: 1rem;
+        margin-top: 4rem;
+        font-weight: 700;
+        color: white;
+    }
+    #btn:hover{
+        background-color: rgb(15, 180, 15);
+        padding: 1.1rem;
+    }
+</style>
+<body>
+    <div id="box">
+        <h1>Timer</h1>
+        <p>
+            <input type="number" id="hour" class="input" min="00" max="24" value="0">:
+            <input type="number" id="minute" class="input" min="00" max="60" value="0">:
+            <input type="number" id="second" class="input" min="00" max="60" value="0">
+        </p>
+        <button id="btn">Start</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

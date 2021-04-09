@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url('background.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .panel{
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 2px solid white;
+            width: 6rem;
+            transition: all 0.2s ease;
+        }
+        .playing{
+            transition: all 1s ease;
+            border: 2px solid goldenrod;
+            color: goldenrod;
+            font-size: 1.6rem;
+            padding: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+    <div data-key-code="65" class="panel">Boom</div>
+    <div data-key-code="83" class="panel">Clap</div>
+    <div data-key-code="68" class="panel">Hihat</div>
+    <div data-key-code="70" class="panel">Kick</div>
+    <div data-key-code="71" class="panel">Openhat</div>
+    <div data-key-code="72" class="panel">Ride</div>
+    <div data-key-code="74" class="panel">Snare</div>
+    <div data-key-code="75" class="panel">Tink</div>
+    <div data-key-code="76" class="panel">Tom</div>
+
+
+    <audio data-key="65" src="sounds/boom.wav"></audio>
+    <audio data-key="83" src="sounds/clap.wav"></audio>
+    <audio data-key="68" src="sounds/hihat.wav"></audio>
+    <audio data-key="70" src="sounds/kick.wav"></audio>
+    <audio data-key="71" src="sounds/openhat.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tink.wav"></audio>
+    <audio data-key="76" src="sounds/tom.wav"></audio>
+
+    <script>
+        const panel = document.querySelectorAll('.panel');
+        function playSound(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+            const key = document.querySelector(`div[data-key-code="${e.keyCode}"]`)
+            if(!audio) return;
+            key.classList.add('playing');
+            audio.currentTime = 0;
+            audio.play();
+            audio.addEventListener('ended',()=>{
+                key.classList.remove('playing');
+            });
+        }
+
+        window.addEventListener('keydown', playSound);
+        
+</script>
+</body>
+</html>

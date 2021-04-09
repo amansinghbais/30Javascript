@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Variable</title>
+    <style>
+        *{
+          margin: 0;  
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* height: 100vh; */
+            background-color: rgb(86, 138, 112);
+        }
+
+        h1{
+            color: white;
+            font-size: 4rem;
+        }
+
+        #changingColor{
+            color: 	#FFD700;
+            transition: color 1s ease;
+        }
+
+        .option{
+            margin: 2rem 1rem;
+        }
+
+        label{
+            font-size: 2rem;
+            color: white;
+        }
+
+        #variable{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #pic{
+            width: 60%;
+            border: 10px solid #FFD700;
+            filter: blur(0px);
+            transition: all 0.3s ease ,border-color 1s ease ;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Update CSS Variables with <span id="changingColor">JS</span></h1>
+    <div id="variable">
+        <div class="option">
+            <label for="space">Spacing:</label>
+            <input type="range" name="space" id="spacing" min="10" max="100" value="10">
+        </div>
+        <div class="option">
+            <label for="blur">Blur:</label>
+            <input type="range" name="blur" id="blurImage" min="0" max="10" value="0">
+        </div>
+        <div class="option">
+            <label for="base">Color:</label>
+            <input type="color" name="base" id="color" value="#FFD700">
+        </div>
+    </div>
+    <img id="pic" src="beach.jpg" alt="Error Loading Image">
+    
+    
+    <script>
+        const spacing = document.getElementById('spacing');
+        const blurImage = document.getElementById('blurImage');
+        const color = document.getElementById('color');
+        const changingColor = document.getElementById('changingColor');
+        const pic = document.getElementById('pic');
+        spacing.addEventListener('change',()=>{
+            var value = spacing.value;
+            pic.style.borderWidth = `${value}px`;
+        });
+        blurImage.addEventListener('change',()=>{
+            var value = blurImage.value;
+            pic.style.filter = `blur(${value}px)`;
+        });
+        color.addEventListener('input',()=>{
+            var value = color.value;
+            pic.style.borderColor = `${value}`;
+            changingColor.style.color = `${value}`;
+        });
+    </script>
+</body>
+</html>
